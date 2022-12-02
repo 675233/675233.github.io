@@ -50,6 +50,7 @@ async function startVideo() {
     .then(function (stream) {
       video1.srcObject = stream;
     })
+    .catch(function(err) { console.log(err.name + ": " + err.message); }) //yjlee
   await video1.play();
   // 讀取照片
   initRecognizeFaces()
