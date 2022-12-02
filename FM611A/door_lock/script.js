@@ -43,10 +43,10 @@ Promise.all([
 ]).then(startVideo)
 
 async function startVideo() {
-  await navigator.mediaDevices.getUserMedia({ video: {} },) // 前鏡頭
-  // await navigator.mediaDevices.getUserMedia({ 
-  //   video: { facingMode: { exact: "environment" } } },  // 後鏡頭
-  //   )
+  //await navigator.mediaDevices.getUserMedia({ video: {} },) // 前鏡頭
+   await navigator.mediaDevices.getUserMedia({ 
+     video: { facingMode: { exact: "environment" } } },  // 後鏡頭
+     )
     .then(function (stream) {
       video1.srcObject = stream;
     })
@@ -101,7 +101,7 @@ async function recognizeFaces() {
     dis = parseFloat(results[i]["distance"])
     console.log(lab + dis)
 
-    if (lab != "unknown" && dis < 0.6) {
+    if (lab != "unknown" && dis < 0.4) {
       $.get(board_url + 'open?name=' + lab);
     }
     console.log(board_url + 'open?name=' + lab)
