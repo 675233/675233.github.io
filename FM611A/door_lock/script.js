@@ -57,6 +57,7 @@ async function startVideo() {
 }
 
 async function startVideo1() {
+  console.log("yjlee: 現在使用前鏡頭");
   await navigator.mediaDevices.getUserMedia({ video: {} },) // 前鏡頭
       .then(function (stream) {
       video1.srcObject = stream;
@@ -66,14 +67,6 @@ async function startVideo1() {
   // 讀取照片
   initRecognizeFaces()
 }
-
-
-
-
-
-
-
-
 
 let labeledDescriptors;
 let faceMatcher;
