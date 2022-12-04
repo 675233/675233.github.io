@@ -50,7 +50,7 @@ async function startVideo() {
     .then(function (stream) {
       video1.srcObject = stream;
     })
-    .catch(function(err) { console.log("yjlee:無法取得後鏡頭，改用前鏡頭" ); return;}) //yjlee
+    .catch(function(err) { console.log("yjlee:無法取得後鏡頭，改用前鏡頭" ); break;}) //yjlee
   await video1.play();
   // 讀取照片
   initRecognizeFaces()
