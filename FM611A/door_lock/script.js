@@ -50,7 +50,7 @@ async function startVideo() {
     .then(function (stream) {
       video1.srcObject = stream;
     })
-    .catch(function(err) { console.log("yjlee:無法取得後鏡頭，改用前鏡頭" ); startVideo1();}) //yjlee
+    .catch(function(err) { console.log("yjlee: 無法取得後鏡頭，改用前鏡頭" ); startVideo1();}) //yjlee
   await video1.play();
   // 讀取照片
   initRecognizeFaces()
@@ -62,7 +62,7 @@ async function startVideo1() {
       .then(function (stream) {
       video1.srcObject = stream;
     })
-    .catch(function(err) { console.log("(yjlee)" + err.name + ": " + err.message); }) //yjlee
+    .catch(function(err) { console.log("yjlee: " + err.name + ": " + err.message); }) //yjlee
   await video1.play();
   // 讀取照片
   initRecognizeFaces()
