@@ -43,7 +43,7 @@ Promise.all([
 ]).then(startVideo)
 
 async function startVideo() {
-  //await navigator.mediaDevices.getUserMedia({ video: {} },) // 前鏡頭
+  console.log("yjlee: 預設使用後鏡頭");
   await navigator.mediaDevices.getUserMedia({ 
   video: { facingMode: { exact: "environment" } } },  // 後鏡頭
   )
